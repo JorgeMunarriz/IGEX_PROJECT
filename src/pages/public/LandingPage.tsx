@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { HOME } from "../../config/paths";
 import { LandingPageStyles } from "..";
 import { useEffect, useState } from "react";
+import {default as imageLogo } from "../../../public/igex_transparent.png"
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const LandingPage = () => {
         {
             showLogo && (
                 <div className={showLogo ? "active" : ""}>
-                    <img src="/src/assets/images/igex_transparent.png" alt="igex logo" className="imageLogo" />
+                    <img src={imageLogo} alt="igex logo" className="imageLogo" />
                 </div>
 
             )

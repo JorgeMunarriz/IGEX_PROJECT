@@ -1,9 +1,24 @@
 import { FooterStyles } from "./footer.styles";
-import { BsFacebook, BsGithub, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
+import { BsFacebook, BsGithub, BsInstagram, BsList, BsTwitter, BsX, BsYoutube } from "react-icons/bs";
+import { useState } from 'react';
 
 export const Footer = () => {
+  const [active, setActive] = useState(false)
+    const handleDropdown = () => {
+      const footerContainerDropdown = document.getElementById("footerContainer");
+      footerContainerDropdown?.classList.toggle("active")
+      setActive(!active)
+    }
+
   return (
-    <FooterStyles>
+    <FooterStyles >
+      <div className="footer__dropdown">
+        <button className="footer__dropdown_button" onClick={handleDropdown}>
+          {!active ? <BsList/> :  <BsX/>}
+        
+        </button>
+      </div>
+      <div className="footer" id="footerContainer">
       <div className="footer__header">
         <ul className="footer__header-socialmedia">
           <li className="footer__header-socialmedia-list">
@@ -40,8 +55,9 @@ export const Footer = () => {
           <li className="footer__main-terms-list">Press Room</li>
         </ul>
       </div>
-      <div className="footer__footer">
-        <p className="footer__footer-copyright">© 2023 Copyright IGEX</p>
+      </div>
+      <div className="footer__footer" id="copyrightContainer">
+        <p className="footer__footer-copyright" >© 2023 Copyright IGEX</p>
       </div>
     </FooterStyles>
   );

@@ -6,6 +6,7 @@ const MediaPageStyles = styled.div`
   justify-content: center;
   width: 100%;
   padding: 2rem;
+  overflow-y: auto;
   .mediaPageContainer {
     display: flex;
     align-items: center;
