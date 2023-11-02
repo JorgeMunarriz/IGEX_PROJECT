@@ -1,0 +1,1 @@
+export {default as Flamingo } from "./flamingo_original.jpg"
