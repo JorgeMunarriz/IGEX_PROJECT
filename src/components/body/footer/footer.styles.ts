@@ -15,6 +15,7 @@ export const FooterStyles = styled.footer`
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    gap: 0.5rem;
     &__dropdown {
       display: none;
       align-items: flex-start;
@@ -24,7 +25,7 @@ export const FooterStyles = styled.footer`
         padding: 3px;
         background: var(--background-light);
         border: 1px solid (--background-dark);
-        border-radius: 5px;
+        border-radius: 20px;
         transition: all 0.3s ease;
         &:hover {
           background: var(--background-light-hover);
@@ -37,9 +38,11 @@ export const FooterStyles = styled.footer`
       &-socialmedia {
         display: flex;
         gap: 1rem;
+        flex-wrap: wrap;
         &-list {
+          display: flex;
           &-link {
-            font-size: 15px;
+            font-size: 30px;
             svg {
               path {
                 transition: all 0.3s ease-in-out;
@@ -74,7 +77,6 @@ export const FooterStyles = styled.footer`
   @media (width < 768px) {
     .footer {
       display: flex;
-
       opacity: 0;
       transform: scaleY(0);
       transform-origin: left;
@@ -88,19 +90,15 @@ export const FooterStyles = styled.footer`
         flex-direction: column;
         gap: 0.75rem;
       }
-      
-      
     }
 
     .active {
-      
       position: sticky;
       bottom: 0;
       opacity: 1;
       transform: scaleY(1);
       transition: all 0.5s ease-in-out;
       height: 200px;
-
     }
   }
 `;

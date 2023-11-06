@@ -38,7 +38,7 @@ export const Header = () => {
           </ul>
         </nav>
         <div className="header__right_dropdown">
-          <button className="header__right_dropdown_button" onClick={handleDropdown}>
+          <button className="header__right_dropdown_button" aria-label="button dropdown menu" onClick={handleDropdown}>
             {!active ? <BsList /> : <BsX />}
           </button>
         </div>

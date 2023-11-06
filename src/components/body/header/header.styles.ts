@@ -41,8 +41,6 @@ export const HeaderStyles = styled.header`
       background-color: var(--background-dark-hover);
       color: rgba(250, 250, 250, 1);
       letter-spacing: 1px;
-      transform: scale(1.1);
-      box-shadow: 20px 10px 20px -3px rgba(0, 0, 0, 0.5);
     }
   }
   .header__right {
@@ -89,8 +87,9 @@ export const HeaderStyles = styled.header`
         padding: 3px;
         background: var(--background-light);
         border: 1px solid (--background-dark);
-        border-radius: 5px;
+        border-radius: 20px;
         transition: all 0.3s ease;
+        overflow: hidden;
         &:hover {
           background: var(--background-light-hover);
         }
@@ -110,17 +109,19 @@ export const HeaderStyles = styled.header`
       }
       &_nav {
         display: flex;
+        align-items: center;
+        justify-content: center;
         opacity: 0;
         transform: scaleY(0);
         transform-origin: left;
         transition: all 0.5s ease-in-out;
-        padding: 0.5rem;
         margin: 0 auto;
+        /* padding-top: 3rem; */
         flex-direction: column;
-        gap: 0.75rem;
         height: 60px;
         &_ul {
           flex-direction: column;
+          gap: 3vw;
         }
       }
     }
@@ -130,7 +131,7 @@ export const HeaderStyles = styled.header`
       opacity: 1;
       transform: scaleY(1);
       transition: all 0.5s ease-in-out;
-      height: 200px;
+      height: 150px;
     }
   }
 `;

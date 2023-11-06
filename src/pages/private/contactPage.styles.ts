@@ -3,17 +3,25 @@ import styled from "styled-components";
 const ContactPageStyles = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   width: 100%;
   height: 100%;
   padding: 2rem;
+
   .formContainer {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 80vw;
     height: 80%;
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
     &__form {
       display: flex;
       align-items: center;
@@ -44,13 +52,38 @@ const ContactPageStyles = styled.div`
           border: 1px solid black;
           border-radius: 3px;
           width: 100%;
+          border: none;
+          outline: none;
+          border-radius: 15px;
+          padding: 1em;
+          background-color: #ccc;
+          box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+          transition: 300ms ease-in-out;
+          &:focus {
+            background-color: white;
+            transform: scale(1.05);
+            box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+          }
         }
+
         &_textarea {
           display: flex;
           align-items: center;
           justify-content: center;
           min-width: 100%;
           min-height: 4vh;
+          border: none;
+          outline: none;
+          border-radius: 15px;
+          padding: 1em;
+          background-color: #ccc;
+          box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+          transition: 300ms ease-in-out;
+          &:focus {
+            background-color: white;
+            transform: scale(1.05);
+            box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
+          }
         }
         &_btnSend {
           display: flex;
@@ -62,16 +95,20 @@ const ContactPageStyles = styled.div`
           color: #fff;
           border: none;
           border-radius: 20px;
-          /* cursor: pointer; */
           transition: all 0.3s;
-          /* background-color: rgba(0,0,0,0.4); */
-          /* & .active{
+          background-color: var(--background-dark);
+           
 
             background-color: var(--background-dark);
             &:hover {
               background-color: var(--background-dark-hover);
             }
-          } */
+          &:focus{
+            background-color: var(--background-darkest);
+          }
+          &:disabled{
+            background-color: var(--background-light);
+          }
         }
       }
     }

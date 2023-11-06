@@ -4,23 +4,32 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-
+type FormState = {
+  user_name: string;
+  user_email: string;
+  message: string;
+};
 
 const SERVICE_ID = import.meta.env.VITE_IGEX_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_IGEX_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_IGEX_PUBLIC_KEY;
 
 const ContactPage = () => {
-  const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
+  const [loading, setLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<{ [key: string]: string }>({});
+  const [form, setForm] = useState<FormState>({
     user_name: "",
     user_email: "",
     message: "",
   });
-  // const [validate, setValidate] = useState(false);
-  const handleChange = (e: { target: { name: string; value: string; }; }) => {
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
+
+    const newErrorMessage = validateForm(name, value);
+    setErrorMessage({ ...errorMessage, [name]: newErrorMessage });
+
   };
 
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -28,56 +37,71 @@ const ContactPage = () => {
   
   
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    const toastLoading = toast.loading(`The email is being send`, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, { from_name: form.user_name, to_name: "Igex Sl", from_email: form.user_email, to_email: "munarrizjorge@gmail.com", message: form.message }, PUBLIC_KEY).then(
-      (result) => {
-        setLoading(false);
-        toast.update(toastLoading, {render: "The email is sended", type: "success", isLoading: false, autoClose: 3000})
-        setForm({
-          user_name: "",
-          user_email: "",
-          message: "",
-        });
-        console.log(result.text);
-      },
-      (error) => {
-        setLoading(false);
-        console.log(error.text);
-        toast.update(toastLoading, {render: "The album is not created", type: "error", isLoading: false, autoClose: 3000})
-      }
-    );
-  };
+    const hasErrors = Object.values(form).some((name, value) => validateForm(name, value.toString()));
+    if (hasErrors) {
+      return;
+    }
 
-  const validateForm = (user_name: string, user_email: string, message: string) => {
-    if (user_name.length < 2) return "The first name would be longer.";
-    if (!user_email.includes("@")) return "Invalid email address";
-    if (message.length < 10) return "The message would be longer.";
-    console.log(user_name, user_email, message);
-    //  setValidate(true);
+    setLoading(true);
+    
+   
+
+      const toastLoading = toast.loading(`The email is being send`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, { from_name: form.user_name, to_name: "Igex Sl", from_email: form.user_email, to_email: "munarrizjorge@gmail.com", message: form.message }, PUBLIC_KEY).then(
+        (result) => {
+          setLoading(false);
+          toast.update(toastLoading, {render: "The email is sended", type: "success", isLoading: false, autoClose: 3000})
+          setForm({
+            user_name: "",
+            user_email: "",
+            message: "",
+          });
+          console.log(result.text);
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error.text);
+          toast.update(toastLoading, {render: "The album is not created", type: "error", isLoading: false, autoClose: 3000})
+        }
+      );
+    
   };
-  const errorMessage = validateForm(form.user_name, form.user_email, form.message);
+  
+
+   const validateForm = (name: string, value: string) => {
+    if (name === "user_name" && value.length < 2) {
+      return "The first name should be longer.";
+    }
+    if (name === "user_email" && !value.includes("@")) {
+      return "Invalid email address";
+    }
+    if (name === "message" && value.length < 10) {
+      return "The message should be longer";
+    }
+    return "";
+  };
 
 
   return (
     <ContactPageStyles>
-      <h2>ContactPage</h2>
       <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
       <div className="formContainer">
+      <h2 className="formContainer__title">ContactPage</h2>
+
         <form className="formContainer__form" ref={formRef} onSubmit={handleSubmit}>
           <div className="formContainer__form_div">
-            <label htmlFor="fistName" className="formContainer__form_div_label">
+            <label htmlFor="firstName" className="formContainer__form_div_label">
               First Name
             </label>
             <input type="text" id="firstName" name="user_name" className="formContainer__form_div_input" value={form.user_name} onChange={handleChange} />
@@ -95,10 +119,11 @@ const ContactPage = () => {
             <textarea className="formContainer__form_div_textarea" id="message" name="message" value={form.message} onChange={handleChange} />
           </div>
           <div className="formContainer__form_div">
-            <button className="formContainer__form_div_btnSend" type="submit" value="Send" id="buttonSubmit">
+            <button className="formContainer__form_div_btnSend" type="submit" value="Send" id="buttonSubmit" disabled={loading}>
               {loading ? "Sending..." : "Send"}
             </button>
-            <p>{errorMessage}</p>
+            {errorMessage && <p>{errorMessage.message}</p>}
+            
           </div>
         </form>
       </div>

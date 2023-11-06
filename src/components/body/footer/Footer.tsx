@@ -1,5 +1,5 @@
 import { FooterStyles } from "./footer.styles";
-import { BsFacebook, BsGithub, BsInstagram, BsList, BsTwitter, BsX, BsYoutube } from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsList, BsTwitter, BsX } from "react-icons/bs";
 import { useState } from 'react';
 
 export const Footer = () => {
@@ -13,7 +13,7 @@ export const Footer = () => {
   return (
     <FooterStyles >
       <div className="footer__dropdown">
-        <button className="footer__dropdown_button" onClick={handleDropdown}>
+        <button className="footer__dropdown_button" aria-label="button dropdown footer" onClick={handleDropdown}>
           {!active ? <BsList/> :  <BsX/>}
         
         </button>
@@ -27,11 +27,6 @@ export const Footer = () => {
             </a>
           </li>
           <li className="footer__header-socialmedia-list">
-            <a href="https://www.github.com/" title="Link to Github" className="footer__header-socialmedia-list-link">
-              <BsGithub />
-            </a>
-          </li>
-          <li className="footer__header-socialmedia-list">
             <a href="https://www.instagram.com/" title="Link to Instagram" className="footer__header-socialmedia-list-link">
               <BsInstagram />
             </a>
@@ -39,11 +34,6 @@ export const Footer = () => {
           <li className="footer__header-socialmedia-list">
             <a href="https://www.twitter.com/" title="Link to Twitter" className="footer__header-socialmedia-list-link">
               <BsTwitter />
-            </a>
-          </li>
-          <li className="footer__header-socialmedia-list">
-            <a href="https://www.youtube.com/" title="Link to Youtube" className="footer__header-socialmedia-list-link">
-              <BsYoutube />
             </a>
           </li>
         </ul>

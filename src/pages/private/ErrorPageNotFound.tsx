@@ -4,7 +4,7 @@ import { ErrorPageNotFoundStyles }  from ".";
  const ErrorPageNotFound = () => {
   const navigate = useNavigate();
   setTimeout(() => {
-    navigate("/");
+    navigate("/home");
   }, 5000);
   return (
     <ErrorPageNotFoundStyles>
