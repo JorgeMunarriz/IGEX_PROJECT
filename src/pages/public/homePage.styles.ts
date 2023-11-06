@@ -7,11 +7,11 @@ const HomePageStyles = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   padding: 2rem;
-  background-image: url(${flamingoBlur});
+  /* background-image: url(${flamingoBlur});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  object-fit: fill;
+  object-fit: fill; */
   width: 100%;
   height: 100%;
 
@@ -22,7 +22,7 @@ const HomePageStyles = styled.div`
     flex-direction: column;
     margin: 0 auto;
     width: 100%;
-  height: 100%;
+    height: 100%;
     &__title {
       font-size: 3rem;
       font-weight: 700;
@@ -33,11 +33,11 @@ const HomePageStyles = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      width: 50vw;
+      width: 75vw;
       height: 100%;
-      &_paragraph{
-
-        text-align: justify;
+      &_paragraph {
+        text-align: center;
+        font-size: 3.5vw;
       }
     }
   }

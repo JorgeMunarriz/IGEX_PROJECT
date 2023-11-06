@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { HeaderStyles } from "./header.styles";
-import { ABOUT, CONTACT, HOME, MEDIA } from "../../../config/paths";
+import { ABOUT, CONTACT, HOME, TEAM } from "../../../config/paths";
 import { useState } from "react";
 import { BsList, BsX } from "react-icons/bs";
 
@@ -21,8 +21,8 @@ export const Header = () => {
         <nav className="header__right_nav" id="headerRightNavigation">
           <ul className="header__right_nav_ul">
             <li className="header__right_nav_ul_list">
-              <Link to={MEDIA} className="header__right_nav_ul_list_link">
-                Media
+              <Link to={TEAM} className="header__right_nav_ul_list_link">
+                Team
               </Link>
             </li>
             <li className="header__right_nav_ul_list">

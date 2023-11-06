@@ -86,7 +86,7 @@ export const HeaderStyles = styled.header`
         font-size: 3rem;
         padding: 3px;
         background: var(--background-light);
-        border: 1px solid (--background-dark);
+        border: 1px solid var(--background-dark);
         border-radius: 20px;
         transition: all 0.3s ease;
         overflow: hidden;

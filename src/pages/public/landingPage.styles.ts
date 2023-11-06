@@ -9,18 +9,43 @@ const LandingPageStyles = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  
+
   .background {
     background-color: var(--background-lineal-gradient);
     width: 100%;
     height: 100%;
-    background-image: url(${Flamingo});
+    /* background-image: url(${Flamingo});
     background-position: center;
     background-repeat: no-repeat;
-    animation: blurBackground 2.5s linear 2.5s forwards;
+    animation: blurBackground 2.5s linear 2.5s forwards; */
+
+    &__btnLink {
+      position: absolute;
+      bottom: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 0.5rem;
+      padding: 10px;
+      width: 100px;
+      background-color: var(--background-dark);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-overflow: ellipsis;
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+      &:hover {
+        background-color: var(--background-dark-hover);
+      }
+    }
   }
 
-  .active {
+  /* .active {
     display: flex;
     position: absolute;
     top: 50%;
@@ -38,9 +63,9 @@ const LandingPageStyles = styled.div`
     animation: showLogo 2.5s linear;
     z-index: 100;
     filter: blur(0)
-  }
+  } */
 
-  @keyframes showLogo {
+  /* @keyframes showLogo {
     0% {
       
       opacity: 0;
@@ -72,7 +97,7 @@ const LandingPageStyles = styled.div`
         
       
     }
-  }
+  }*/
 `;
 
 export default LandingPageStyles;

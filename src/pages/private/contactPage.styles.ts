@@ -13,7 +13,7 @@ const ContactPageStyles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 80vw;
     height: 80%;
     &__title {
