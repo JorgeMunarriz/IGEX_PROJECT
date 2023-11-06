@@ -15,6 +15,7 @@
 
 body {
   background: var(--background--lineal-gradient);
+  min-width: 300px;
 }
 a,
 button {
@@ -97,7 +98,8 @@ h6 {
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 5px;
+  height: 5px;
   background-color: rgba(0, 0, 0, 1);
 }
 ::-webkit-scrollbar-track {
@@ -106,5 +108,5 @@ h6 {
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgba(232, 89, 115, 0.693);
-  background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.2));
+  
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MediaPageStyles = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -55,8 +55,8 @@ position: relative;
     max-width: 50px;
   }
 } */
-.videoPlayer{
-  display: none;
+  .videoPlayer {
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -64,30 +64,39 @@ position: relative;
     z-index: 10000;
     width: 100%;
     height: 100%;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(20px);
     visibility: hidden;
     opacity: 0;
-    &.active{
-        visibility: visible;
-        opacity: 1;
+    &.active {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
     }
-    video{
-        max-width: 900px;
-        outline: none;
-        border-radius: 5px;
+    &__video {
+      max-width: 900px;
+      outline: none;
+      border-radius: 5px;
     }
-}
-.close{
+  }
+  .close {
     position: absolute;
     top: 30px;
     right: 30px;
     cursor: pointer;
     filter: invert(1);
     max-width: 32px;
-}
+  }
+
+  @media (max-width: 991px) {
+    .videoPlayer {
+      &__video {
+        max-width: 90%;
+      }
+    }
+  }
 `;
 
 export default MediaPageStyles;

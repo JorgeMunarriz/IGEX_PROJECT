@@ -1,43 +1,52 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HOME } from "../../config/paths";
 import { LandingPageStyles } from "..";
-// import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { imageLogo } from "../../../public";
 
 const LandingPage = () => {
-  // const navigate = useNavigate();
-  // const [showLogo, setShowLogo] = useState(false);
+  const navigate = useNavigate();
+  const [showLogo, setShowLogo] = useState(false);
+  const [showTitle, setShowTitle] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowLogo(true);
-  //   }, 2500);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLogo(true);
+      setTimeout(() => {
+        setShowTitle(true);
+      }, 2500);
+    }, 3500);
 
-  //   return () => clearTimeout(timer);
-  // }, [navigate]);
+    return () => clearTimeout(timer);
+  }, [navigate]);
 
-  // setTimeout(() => {
-  //   navigate(HOME);
-  // }, 5000);
+  setTimeout(() => {
+    navigate(HOME);
+  }, 1250000);
+
+  const videoLanding: string | undefined = import.meta.env.VITE_VIDEO_LANDING;
 
   return (
     <LandingPageStyles>
       <div className="background"></div>
-      {/* {
-            showLogo && (
-              <>
-                <div className={showLogo ? "active" : ""}>
-                    <img src={imageLogo} alt="igex logo" className="imageLogo" />
-                </div>
-              </>
+      {showLogo && (
+        <>
+          <div className={showLogo ? "active" : ""}>
+            <img src={imageLogo} alt="igex logo" className="imageLogo" />
+          </div>
+        </>
+      )}
+      {showTitle && (
+        <div>
+          <h3 className="background__title">INDO CLOBAL EXHANGES LTD</h3>
+        </div>
+      )}
 
-            )
-        } */}
+      <audio className="background__video" src={videoLanding} autoPlay={true} controls={true} loop={false} playsInline></audio>
 
-      <video className="background__video" src="https://res.cloudinary.com/dco3p5czc/video/upload/f_auto:video,q_auto/v1/igex%20web/flxdg7mv87jhyamlxkfx" autoPlay={true} controls={false}></video>
-
-      
-        <Link to={HOME} className="background__btnLink">HomePage</Link>
-      
+      <Link to={HOME} className="background__btnLink">
+        Go to HomePage
+      </Link>
     </LandingPageStyles>
   );
 };

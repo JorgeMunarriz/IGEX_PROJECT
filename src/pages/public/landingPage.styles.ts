@@ -12,12 +12,17 @@ const LandingPageStyles = styled.div`
 
   .background {
     background-color: var(--background-lineal-gradient);
-    width: 100%;
-    height: 100%;
-    /* background-image: url(${Flamingo});
+    width: 100vw;
+    height: 100vh;
+    background-image: url(${Flamingo});
     background-position: center;
     background-repeat: no-repeat;
-    animation: blurBackground 2.5s linear 2.5s forwards; */
+    animation: blurBackground 2.5s linear 2.5s forwards;
+    background-size: cover;
+    &__video{
+      width: 0%;
+      height: 0%;
+    }
 
     &__btnLink {
       position: absolute;
@@ -27,7 +32,7 @@ const LandingPageStyles = styled.div`
       justify-content: space-around;
       gap: 0.5rem;
       padding: 10px;
-      width: 100px;
+      width: 150px;
       background-color: var(--background-dark);
       color: #fff;
       border: none;
@@ -44,9 +49,26 @@ const LandingPageStyles = styled.div`
       }
     }
   }
-
-  /* .active {
+  
+  .background__title{
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 100px;
+    animation: showLogo 2.5s linear;
+    text-align: center;
+    z-index: 100;
+    filter: blur(0);
+    font-size: 3vw;
+    font-family: sans-serif;
+    font-weight: 100 !important;
+    letter-spacing: 1vw;
+  }
+  .active {
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,27 +79,27 @@ const LandingPageStyles = styled.div`
   }
   
   .imageLogo {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     position: relative;
-    animation: showLogo 2.5s linear;
+    animation: showLogo 3.5s linear;
     z-index: 100;
     filter: blur(0)
-  } */
+  } 
 
-  /* @keyframes showLogo {
+ @keyframes showLogo {
     0% {
       
       opacity: 0;
     }
     25% {
-      opacity: 0.25
+      opacity: 0.25;
     }
     50% {
-      opacity: 0.5
+      opacity: 0.5;
     }
     75% {
-      opacity: 0.75
+      opacity: 0.75;
     }
     100% {
       opacity: 1;
@@ -97,7 +119,9 @@ const LandingPageStyles = styled.div`
         
       
     }
-  }*/
+  }
+
+
 `;
 
 export default LandingPageStyles;
