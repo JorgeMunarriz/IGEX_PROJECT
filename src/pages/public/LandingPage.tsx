@@ -8,9 +8,11 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [showLogo, setShowLogo] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
+  const [playMusic, setPlayMusic] = useState<boolean>(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      setPlayMusic(true);
       setShowLogo(true);
       setTimeout(() => {
         setShowTitle(true);
@@ -22,7 +24,7 @@ const LandingPage = () => {
 
   setTimeout(() => {
     navigate(HOME);
-  }, 10500);
+  }, 10500000);
 
   const videoLanding: string | undefined = import.meta.env.VITE_VIDEO_LANDING;
 
@@ -41,8 +43,11 @@ const LandingPage = () => {
           <h3 className="background__title">INDO CLOBAL EXHANGES LTD</h3>
         </div>
       )}
-
-      <audio className="background__video" src={videoLanding} autoPlay={true} controls={true} loop={false} playsInline></audio>
+      {playMusic && (
+        <>
+          <audio className="background__video" src={videoLanding} autoPlay={true} muted={false} controls={false} loop={false} playsInline={true} />
+        </>
+      )}
 
       <Link to={HOME} className="background__btnLink">
         Go to HomePage
