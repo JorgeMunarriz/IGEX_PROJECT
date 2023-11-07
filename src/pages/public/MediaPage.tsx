@@ -58,7 +58,7 @@ const MediaPage = () => {
       <section className={`videoPlayer ${isVideoVisible ? "active" : ""}`} id="videoPlayerContainer">
         {isVideoVisible && (
           <>
-            <video className="videoPlayer__video" src={selectedVideoSrc} autoPlay={false} controls></video>
+            <video className="videoPlayer__video" src={selectedVideoSrc} autoPlay={true} controls></video>
             <img
               src={image.close_image}
               alt="Ícono de Cerrar"
