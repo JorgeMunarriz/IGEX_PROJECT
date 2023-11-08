@@ -41,7 +41,7 @@ export const Footer = () => {
       <div className="footer__main">
         <ul className="footer__main-terms">
           <li className="footer__main-terms-list">Conditions of use</li>
-          <li className="footer__main-terms-list">Privacy & Policy</li>
+          <li className="footer__main-terms-list"> <a href="" className="pdcc-open-modal">Privacy & Policy</a></li>
           <li className="footer__main-terms-list">Press Room</li>
         </ul>
       </div>

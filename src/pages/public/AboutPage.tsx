@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AboutPageStyles } from ".";
-import * as image from "../../../public";
+import * as image from "../../assets/images";
 
 const AboutPage = () => {
   const [selectedVideoSrc, setSelectedVideoSrc] = useState<string | undefined>(undefined);
@@ -41,7 +41,10 @@ const AboutPage = () => {
   return (
     <AboutPageStyles>
       <div className="aboutPageContainer">
-        <h2 className="aboutPageContainer__title">About us</h2>
+        <div className="aboutPageContainer__titleContainer">
+        <h2 className="aboutPageContainer__titleContainer_title">About us</h2>
+
+        </div>
         <div className="aboutPageContainer__content">
           {videoData.map((item) => (
             <div className="aboutPageContainer__content_videoContainer" key={item.id}>

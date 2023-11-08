@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { HOME } from "../../config/paths";
 import { LandingPageStyles } from "..";
 import { useState, useEffect } from "react";
-import { imageLogo } from "../../../public";
+import { imageLogo } from "../../assets/images";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -30,7 +30,9 @@ const LandingPage = () => {
 
   return (
     <LandingPageStyles>
-      <div className="background"></div>
+      <div className="background">
+        
+      </div>
       {showLogo && (
         <>
           <div className={showLogo ? "active" : ""}>

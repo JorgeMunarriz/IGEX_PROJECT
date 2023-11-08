@@ -1,15 +1,18 @@
-
-import { TeamPageStyles } from '.'
+import { TeamPageStyles } from ".";
 
 const TeamPage = () => {
   return (
     <TeamPageStyles>
-        <div className='teamPageContainer'>
-        <h2 className='teamPageContainer__title'>Our Team</h2>
-        <video className="teamPageContainer__video" src={import.meta.env.VITE_VIDEO_TEAM} autoPlay={true} controls></video>
+      <div className="teamPageContainer">
+        <div className="teamPageContainer__titleContainer">
+          <h2 className="teamPageContainer__titleContainer_title">Our Team</h2>
         </div>
+        <div className="teamPageContainer__videoContainer">
+          <video className="teamPageContainer__videoContainer_video" src={import.meta.env.VITE_VIDEO_TEAM} autoPlay={true} controls></video>
+        </div>
+      </div>
     </TeamPageStyles>
-  )
-}
+  );
+};
 
-export default TeamPage
+export default TeamPage;

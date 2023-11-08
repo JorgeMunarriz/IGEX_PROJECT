@@ -15,7 +15,14 @@ const AboutPageStyles = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 2rem;
+    &__titleContainer{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+      &_title{
+        
+      }
+    }
     &__content {
       display: flex;
       align-items: center;
@@ -23,6 +30,7 @@ const AboutPageStyles = styled.div`
       gap: 3rem;
       flex-wrap: wrap;
       height: 100%;
+      padding-top: 2rem;
       &_videoContainer {
         display: flex;
         flex-direction: column;

@@ -12,14 +12,25 @@ const TeamPageStyles = styled.div`
   .teamPageContainer {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: column;
+    margin: 0 auto;
     width: 100%;
     height: 100%;
 
-    
-    &__video {
-      max-width: 90%;
+    &__videoContainer{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+
+      &_video {
+        max-width: 1200px;
+        width: 80%;
+      }
     }
   }
 
