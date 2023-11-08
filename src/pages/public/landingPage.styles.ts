@@ -62,11 +62,11 @@ const LandingPageStyles = styled.div`
 
   .background__title {
     position: absolute;
-    bottom: -8%;
+    bottom: 8%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90vw;
-    height: 100px;
+    height: 20px;
     animation: showLogo 2.5s linear;
     text-align: center;
     z-index: 100;
