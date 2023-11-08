@@ -40,7 +40,7 @@ const LandingPage = () => {
       )}
       {showTitle && (
         <div>
-          <h3 className="background__title">INDO CLOBAL EXHANGES LTD</h3>
+          <h3 className="background__title">INDO GLOBAL EXHANGES LTD</h3>
         </div>
       )}
       {playMusic && (

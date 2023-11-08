@@ -33,13 +33,47 @@ const HomePageStyles = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      width: 35vw;
+      height: 100%;
+      &_paragraph {
+        text-align: center;
+        
+        font-size: 1.55vw;
+        font-weight: 100;
+      }
+    }
+  }
+
+  @media (width < 768px) {
+    
+
+    .homePage {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    &__title {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       width: 75vw;
       height: 100%;
       &_paragraph {
         text-align: center;
         font-size: 3.5vw;
+        font-weight: 100;
       }
     }
+  }
   }
 `;
 

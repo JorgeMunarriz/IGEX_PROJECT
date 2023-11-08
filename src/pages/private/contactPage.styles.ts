@@ -8,6 +8,7 @@ const ContactPageStyles = styled.div`
   width: 100%;
   height: 100%;
   padding: 2rem;
+  overflow: auto;
 
   .formContainer {
     display: flex;
@@ -15,7 +16,7 @@ const ContactPageStyles = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 80vw;
-    height: 80%;
+    height: 100%;
     &__title {
       display: flex;
       align-items: center;
@@ -25,7 +26,7 @@ const ContactPageStyles = styled.div`
     &__form {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex-direction: column;
       width: 80%;
       height: 80%;

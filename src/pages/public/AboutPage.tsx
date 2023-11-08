@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { MediaPageStyles } from ".";
-import * as image from "../../../public/";
+import { AboutPageStyles } from ".";
+import * as image from "../../../public";
 
-const MediaPage = () => {
+const AboutPage = () => {
   const [selectedVideoSrc, setSelectedVideoSrc] = useState<string | undefined>(undefined);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 
@@ -39,18 +39,13 @@ const MediaPage = () => {
   };
 
   return (
-    <MediaPageStyles>
-      <div className="mediaPageContainer">
-        <h2 className="mediaPageContainer__title">Our Team</h2>
-        <div className="mediaPageContainer__content">
+    <AboutPageStyles>
+      <div className="aboutPageContainer">
+        <h2 className="aboutPageContainer__title">About us</h2>
+        <div className="aboutPageContainer__content">
           {videoData.map((item) => (
-            <div className="mediaPageContainer__content_videoContainer" key={item.id}>
-              <img
-                src={image[`image_${item.id}` as keyof typeof image]}
-                alt="test"
-                className="mediaPageContainer__content_videoContainer_image"
-                onClick={() => toggleVideo(item.src)}
-              />
+            <div className="aboutPageContainer__content_videoContainer" key={item.id}>
+              <img src={image[`image_${item.id}` as keyof typeof image]} alt="test" className="aboutPageContainer__content_videoContainer_image" onClick={() => toggleVideo(item.src)} />
             </div>
           ))}
         </div>
@@ -59,17 +54,12 @@ const MediaPage = () => {
         {isVideoVisible && (
           <>
             <video className="videoPlayer__video" src={selectedVideoSrc} autoPlay={true} controls></video>
-            <img
-              src={image.close_image}
-              alt="Ícono de Cerrar"
-              className="close"
-              onClick={() => toggleVideo(undefined)}
-            />
+            <img src={image.close_image} alt="Ícono de Cerrar" className="close" onClick={() => toggleVideo(undefined)} />
           </>
         )}
       </section>
-    </MediaPageStyles>
+    </AboutPageStyles>
   );
 };
 
-export default MediaPage;
+export default AboutPage;

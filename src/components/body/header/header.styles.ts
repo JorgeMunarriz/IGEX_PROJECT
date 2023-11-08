@@ -2,10 +2,7 @@ import styled from "styled-components";
 
 export const HeaderStyles = styled.header`
   grid-area: 1 / 1 / 2 / 11;
-  background-image: var();
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
+  
   width: 100%;
   display: flex;
   align-items: center;
