@@ -7,7 +7,6 @@ const TeamPageStyles = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  /* padding: 2rem; */
 
   .teamPageContainer {
     display: flex;
@@ -17,45 +16,66 @@ const TeamPageStyles = styled.div`
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    &__titleContainer{
+    &__titleContainer {
       padding: 2rem;
-      &_title{
-      font-weight: 100;
-
+      &_title {
+        font-weight: 100;
       }
-
     }
-    &__videoContainer{
+    &__videoContainer {
       display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
 
       &_video {
         max-width: 1200px;
         width: 100%;
+        padding: 2rem;
       }
     }
   }
 
-  @media only screen and (orientation: landscape) {
+  @media only screen and (max-width: 700px){
     .teamPageContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
 
-    
-    &__video {
-      max-width: 45%;
+      &__videoContainer {
+        padding: 0;
+        &_video {
+          max-width: 100%;
+          padding: 0;
+        }
+      }
     }
   }
-}
+  
+  @media only screen and (orientation: landscape) {
+    .teamPageContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+
+      &__videoContainer {
+        padding: 0;
+        &__video {
+          max-width: 100%;
+        }
+      }
+    }
+  }
 `;
 
 export default TeamPageStyles;
