@@ -1,14 +1,11 @@
-import RouterPaths from "./router/RouterPaths.routes"
-
+import RouterPaths from "./router/RouterPaths.routes";
 
 function App() {
-  
-
   return (
     <>
-     <RouterPaths/>
+      <RouterPaths />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

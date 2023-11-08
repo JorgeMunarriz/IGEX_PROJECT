@@ -20,7 +20,7 @@ export const HeaderStyles = styled.header`
     border-radius: 20px;
     transition: all 0.4s ease-in-out;
     gap: 1rem;
-    &-title{
+    &-title {
       font-size: 1rem;
       font-weight: 100;
     }
@@ -32,7 +32,7 @@ export const HeaderStyles = styled.header`
 
   .header__right {
     display: flex;
-    padding: 0 0 0 6vw ;
+    padding: 0 0 0 6vw;
     &_nav {
       display: flex;
       gap: 0.5rem;
