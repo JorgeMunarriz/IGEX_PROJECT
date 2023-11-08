@@ -7,7 +7,7 @@ const TeamPageStyles = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  /* padding: 2rem; */
 
   .teamPageContainer {
     display: flex;
@@ -17,7 +17,14 @@ const TeamPageStyles = styled.div`
     margin: 0 auto;
     width: 100%;
     height: 100%;
+    &__titleContainer{
+      padding: 2rem;
+      &_title{
+      font-weight: 100;
 
+      }
+
+    }
     &__videoContainer{
       display: flex;
     align-items: center;
@@ -29,7 +36,7 @@ const TeamPageStyles = styled.div`
 
       &_video {
         max-width: 1200px;
-        width: 80%;
+        width: 100%;
       }
     }
   }

@@ -52,6 +52,10 @@ export const FooterStyles = styled.footer`
             &:hover svg path {
               color: rgba(250, 250, 250, 1);
             }
+            &-logo{
+              width: 30px;
+              height: 30px;
+            }
           }
         }
       }
@@ -64,6 +68,13 @@ export const FooterStyles = styled.footer`
 
         &-list {
           color: rgba(250, 250, 250, 1);
+          &-link{
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            &:hover{
+              color: var(--text-white);
+            }
+          }
         }
       }
     }
@@ -75,6 +86,7 @@ export const FooterStyles = styled.footer`
   }
 
   @media (width < 768px) {
+    padding: 0.5rem;
     .footer {
       display: flex;
       opacity: 0;

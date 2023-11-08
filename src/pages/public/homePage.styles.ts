@@ -44,11 +44,10 @@ const HomePageStyles = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      width: 35vw;
+      width: 41vw;
       height: 100%;
       &_paragraph {
         text-align: center;
-
         font-size: 1.55vw;
         font-weight: 100;
       }
@@ -78,7 +77,7 @@ const HomePageStyles = styled.div`
         height: 100%;
         &_paragraph {
           text-align: center;
-          font-size: 3.5vw;
+          font-size: 5.5vw;
           font-weight: 100;
         }
       }

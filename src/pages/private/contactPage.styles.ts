@@ -21,7 +21,7 @@ const ContactPageStyles = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 600;
+      font-weight: 100;
     }
     &__form {
       display: flex;

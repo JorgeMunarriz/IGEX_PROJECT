@@ -14,24 +14,27 @@ export const Header = () => {
 
   return (
     <HeaderStyles>
+      <div>
       <Link className="header__left" to={HOME}>
-        <h1 className="header__left-title">IGEX</h1>
+        <h1 className="header__left-title">Home</h1>
       </Link>
+
+      </div>
       <div className="header__right">
         <nav className="header__right_nav" id="headerRightNavigation">
           <ul className="header__right_nav_ul">
             <li className="header__right_nav_ul_list">
-              <Link to={TEAM} className="header__right_nav_ul_list_link">
+              <Link to={TEAM} className="header__right_nav_ul_list_link" title="Link to home" >
                 Team
               </Link>
             </li>
             <li className="header__right_nav_ul_list">
-              <Link to={ABOUT} className="header__right_nav_ul_list_link">
+              <Link to={ABOUT} className="header__right_nav_ul_list_link" title="Link to about" >
                 About
               </Link>
             </li>
             <li className="header__right_nav_ul_list">
-              <Link to={CONTACT} className="header__right_nav_ul_list_link">
+              <Link to={CONTACT} className="header__right_nav_ul_list_link" title="Link to contact" >
                 Contact
               </Link>
             </li>

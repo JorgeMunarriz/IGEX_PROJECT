@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { default as flamingoBlur } from "../../public/flamingo_full.png";
+import { flamingoBlur } from '../assets/images';
+
 
 
 export const LayoutPage = styled.div`

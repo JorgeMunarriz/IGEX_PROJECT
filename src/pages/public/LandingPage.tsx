@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { HOME } from "../../config/paths";
+import { ABOUT, CONTACT, HOME, TEAM } from "../../config/paths";
 import { LandingPageStyles } from "..";
 import { useState, useEffect } from "react";
 import { imageLogo } from "../../assets/images";
@@ -8,11 +8,11 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [showLogo, setShowLogo] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
-  const [playMusic, setPlayMusic] = useState<boolean>(true);
+  // const [playMusic, setPlayMusic] = useState<boolean>(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setPlayMusic(true);
+      // setPlayMusic(true);
       setShowLogo(true);
       setTimeout(() => {
         setShowTitle(true);
@@ -24,12 +24,26 @@ const LandingPage = () => {
 
   setTimeout(() => {
     navigate(HOME);
-  }, 10500000);
+  }, 105000000);
 
-  const videoLanding: string | undefined = import.meta.env.VITE_VIDEO_LANDING;
+  // const videoLanding: string | undefined = import.meta.env.VITE_VIDEO_LANDING;
 
   return (
     <LandingPageStyles>
+      <div className="background__linksContainer">
+      <Link to={HOME} className="background__linksContainer_btnLink" title="Link to home">
+         Home
+      </Link>
+      <Link to={TEAM} className="background__linksContainer_btnLink" title="Link to team">
+        Team
+      </Link>
+      <Link to={ABOUT} className="background__linksContainer_btnLink" title="Link to about">
+        About
+      </Link>
+      <Link to={CONTACT} className="background__linksContainer_btnLink" title="Link to contact">
+        Contact
+      </Link>
+      </div>
       <div className="background">
         
       </div>
@@ -45,15 +59,13 @@ const LandingPage = () => {
           <h3 className="background__title">INDO GLOBAL EXHANGES LTD</h3>
         </div>
       )}
-      {playMusic && (
+      {/* {playMusic && (
         <>
-          <audio className="background__video" src={videoLanding} autoPlay={true} muted={false} controls={false} loop={false} playsInline={true} />
+          {/* <audio className="background__video" src={videoLanding} autoPlay={true} muted={false} controls={false} loop={false} playsInline={true} /> }
         </>
-      )}
+      )} */}
 
-      <Link to={HOME} className="background__btnLink">
-        Go to HomePage
-      </Link>
+      
     </LandingPageStyles>
   );
 };

@@ -1,4 +1,5 @@
 export {default as Flamingo } from "./flamingo_original.jpg";
+export {default as flamingoBlur } from "./flamingo_full.png";
 export { default as image_1 } from "./image_1.png";
 export { default as image_2 } from "./image_2.png";
 export { default as image_3 } from "./image_3.png";

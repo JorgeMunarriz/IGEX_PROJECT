@@ -2,47 +2,37 @@ import styled from "styled-components";
 
 export const HeaderStyles = styled.header`
   grid-area: 1 / 1 / 2 / 11;
-  
+
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1vw 2vw;
   .header__left {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
+    width: 75px;
     padding: 5px;
     background-color: var(--background-dark);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 1);
     border: none;
     border-radius: 20px;
     transition: all 0.4s ease-in-out;
     gap: 1rem;
-    svg {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 25px;
-      height: 25px;
-      path {
-        width: 50%;
-        color: rgba(250, 250, 250, 0.6);
-      }
-
-      &-title {
-      }
+    &-title{
+      font-size: 1rem;
+      font-weight: 100;
     }
     &:hover {
       background-color: var(--background-dark-hover);
       color: rgba(250, 250, 250, 1);
-      letter-spacing: 1px;
     }
   }
+
   .header__right {
     display: flex;
-    padding: 0 5vw;
+    padding: 0 0 0 6vw ;
     &_nav {
       display: flex;
       gap: 0.5rem;
@@ -55,7 +45,7 @@ export const HeaderStyles = styled.header`
             align-items: center;
             justify-content: space-around;
             gap: 0.5rem;
-            padding: 4px;
+            padding: 5px;
             width: 75px;
             background-color: var(--background-dark);
             color: #fff;
@@ -98,7 +88,7 @@ export const HeaderStyles = styled.header`
     justify-content: space-evenly;
     .header__right {
       width: 50%;
-      
+
       &_dropdown {
         display: flex;
         align-items: center;
