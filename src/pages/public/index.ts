@@ -6,3 +6,5 @@ export { default as LandingPageStyles } from "./landingPage.styles";
 export { default as AboutPageStyles } from "./aboutPage.styles";
 export { default as CookiesPageStyles } from "./cookiesPage.styles";
 export { default as CookiesPage } from "./CookiesPage";
+export { default as PressPageStyles } from "./pressPage.styles";
+export { default as PressPage } from "./PressPage";

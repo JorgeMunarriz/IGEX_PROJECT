@@ -31,22 +31,20 @@ const LandingPage = () => {
   return (
     <LandingPageStyles>
       <div className="background__linksContainer">
-      <Link to={HOME} className="background__linksContainer_btnLink" title="Link to home">
-         Home
-      </Link>
-      <Link to={TEAM} className="background__linksContainer_btnLink" title="Link to team">
-        Team
-      </Link>
-      <Link to={ABOUT} className="background__linksContainer_btnLink" title="Link to about">
-        About
-      </Link>
-      <Link to={CONTACT} className="background__linksContainer_btnLink" title="Link to contact">
-        Contact
-      </Link>
+        <Link to={HOME} className="background__linksContainer_btnLink" title="Link to home">
+          Home
+        </Link>
+        <Link to={TEAM} className="background__linksContainer_btnLink" title="Link to team">
+          Team
+        </Link>
+        <Link to={ABOUT} className="background__linksContainer_btnLink" title="Link to about">
+          About
+        </Link>
+        <Link to={CONTACT} className="background__linksContainer_btnLink" title="Link to contact">
+          Contact
+        </Link>
       </div>
-      <div className="background">
-        
-      </div>
+      <div className="background"></div>
       {showLogo && (
         <>
           <div className={showLogo ? "active" : ""}>
@@ -56,7 +54,7 @@ const LandingPage = () => {
       )}
       {showTitle && (
         <div>
-          <h3 className="background__title">INDO GLOBAL EXHANGES LTD</h3>
+          <h3 className="background__title">INDO GLOBAL EXCHANGES LTD</h3>
         </div>
       )}
       {/* {playMusic && (
@@ -64,8 +62,6 @@ const LandingPage = () => {
           {/* <audio className="background__video" src={videoLanding} autoPlay={true} muted={false} controls={false} loop={false} playsInline={true} /> }
         </>
       )} */}
-
-      
     </LandingPageStyles>
   );
 };

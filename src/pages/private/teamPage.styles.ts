@@ -33,7 +33,7 @@ const TeamPageStyles = styled.div`
       padding: 2rem;
 
       &_video {
-        max-width: 1200px;
+        max-width: 900px;
         width: 100%;
         padding: 2rem;
       }

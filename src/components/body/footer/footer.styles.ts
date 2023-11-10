@@ -39,10 +39,12 @@ export const FooterStyles = styled.footer`
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
+        align-items: center;
         &-list {
           display: flex;
           &-link {
             font-size: 30px;
+            cursor: pointer;
             svg {
               path {
                 transition: all 0.3s ease-in-out;
@@ -55,6 +57,10 @@ export const FooterStyles = styled.footer`
             &-logo{
               width: 30px;
               height: 30px;
+              &-otc{
+                width: 65px;
+                height: 26px;
+              }
             }
           }
         }
@@ -71,6 +77,8 @@ export const FooterStyles = styled.footer`
           &-link{
             color: var(--text-light);
             transition: all 0.3s ease;
+            cursor: pointer;
+
             &:hover{
               color: var(--text-white);
             }

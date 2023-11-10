@@ -74,7 +74,7 @@ const AboutPageStyles = styled.div`
       opacity: 1;
     }
     &__video {
-      max-width: 100%;
+      max-width: 90%;
       outline: none;
       border-radius: 5px;
     }

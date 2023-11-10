@@ -1,10 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AboutPageStyles } from ".";
 import * as image from "../../assets/images";
 
 const AboutPage = () => {
   const [selectedVideoSrc, setSelectedVideoSrc] = useState<string | undefined>(undefined);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [currentVideoId, setCurrentVideoId] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    const videoElement = document.getElementById(`videoPlayer-${currentVideoId}`);
+
+    if (videoElement) {
+      videoElement.addEventListener("ended", () => {
+        setIsVideoVisible(false);
+        setSelectedVideoSrc(undefined);
+        setCurrentVideoId(undefined);
+      });
+    }
+
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener("ended", () => {
+          setIsVideoVisible(false);
+          setSelectedVideoSrc(undefined);
+          setCurrentVideoId(undefined);
+        });
+      }
+    };
+  }, [currentVideoId]);
 
   const videoData = [
     {
@@ -39,9 +62,11 @@ const AboutPage = () => {
     },
   ];
 
-  const toggleVideo = (videoSrc: string | undefined) => {
+  const toggleVideo = (videoSrc: string | undefined, videoId: number | undefined) => {
     setSelectedVideoSrc(videoSrc);
     setIsVideoVisible(!!videoSrc);
+    setCurrentVideoId(videoId);
+    console.log(videoSrc, videoId)
   };
 
   return (
@@ -54,7 +79,7 @@ const AboutPage = () => {
         <div className="aboutPageContainer__content">
           {videoData.map((item) => (
             <div className="aboutPageContainer__content_videoContainer" key={item.id}>
-              <img src={image[`image_${item.id}` as keyof typeof image]} alt="test" className="aboutPageContainer__content_videoContainer_image" onClick={() => toggleVideo(item.src)} />
+              <img src={image[`image_${item.id}` as keyof typeof image]} alt={`${item.text} image`} className="aboutPageContainer__content_videoContainer_image" onClick={() => toggleVideo(item.src, item.id)} />
               <div className="aboutPageContainer__content_videoContainer_titleContainer">
               <h4 className="aboutPageContainer__content_videoContainer_titleContainer_title">{item.text}</h4>
               </div>
@@ -65,8 +90,8 @@ const AboutPage = () => {
       <section className={`videoPlayer ${isVideoVisible ? "active" : ""}`} id="videoPlayerContainer">
         {isVideoVisible && (
           <>
-            <video className="videoPlayer__video" src={selectedVideoSrc} autoPlay={true} controls></video>
-            <img src={image.close_image} alt="Ícono de Cerrar" className="close" onClick={() => toggleVideo(undefined)} />
+            <video className="videoPlayer__video" id={`videoPlayer-${currentVideoId}`} src={selectedVideoSrc} autoPlay={true} controls></video>
+            <img src={image.close_image} alt="Ícono de Cerrar" className="close" onClick={() => toggleVideo(undefined, currentVideoId)} />
           </>
         )}
       </section>

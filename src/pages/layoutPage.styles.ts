@@ -20,6 +20,8 @@ export const LayoutPage = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
+    overflow: auto;
+    padding:  2rem 0;
   }
   
 `;

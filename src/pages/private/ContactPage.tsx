@@ -111,7 +111,7 @@ const ContactPage = () => {
     <ContactPageStyles>
       <ToastContainer position="top-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
       <div className="formContainer">
-        <h2 className="formContainer__title">ContactPage</h2>
+        <h2 className="formContainer__title">Contact us</h2>
 
         <form className="formContainer__form" ref={formRef} onSubmit={handleSubmit}>
           <div className="formContainer__form_div">
