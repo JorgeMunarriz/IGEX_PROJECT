@@ -33,32 +33,32 @@ const AboutPage = () => {
     {
       id: 1,
       src: import.meta.env.VITE_VIDEO_1,
-      text: "CEO"
+      text: "CEO",
     },
     {
       id: 2,
       src: import.meta.env.VITE_VIDEO_2,
-      text: "OCEAN"
+      text: "OCEAN",
     },
     {
       id: 3,
       src: import.meta.env.VITE_VIDEO_3,
-      text: "HOLDING"
+      text: "HOLDING",
     },
     {
       id: 4,
       src: import.meta.env.VITE_VIDEO_4,
-      text: "SAINT ANDREWS"
+      text: "SAINT ANDREWS",
     },
     {
       id: 5,
       src: import.meta.env.VITE_VIDEO_5,
-      text: "BUSSINESSES"
+      text: "BUSSINESSES",
     },
     {
       id: 6,
       src: import.meta.env.VITE_VIDEO_6,
-      text: "FLAMINGO"
+      text: "FLAMINGO",
     },
   ];
 
@@ -66,22 +66,25 @@ const AboutPage = () => {
     setSelectedVideoSrc(videoSrc);
     setIsVideoVisible(!!videoSrc);
     setCurrentVideoId(videoId);
-    console.log(videoSrc, videoId)
   };
 
   return (
     <AboutPageStyles>
       <div className="aboutPageContainer">
         <div className="aboutPageContainer__titleContainer">
-        <h2 className="aboutPageContainer__titleContainer_title">About us</h2>
-
+          <h2 className="aboutPageContainer__titleContainer_title">About us</h2>
         </div>
         <div className="aboutPageContainer__content">
           {videoData.map((item) => (
             <div className="aboutPageContainer__content_videoContainer" key={item.id}>
-              <img src={image[`image_${item.id}` as keyof typeof image]} alt={`${item.text} image`} className="aboutPageContainer__content_videoContainer_image" onClick={() => toggleVideo(item.src, item.id)} />
+              <img
+                src={image[`image_${item.id}` as keyof typeof image]}
+                alt={`${item.text} image`}
+                className="aboutPageContainer__content_videoContainer_image"
+                onClick={() => toggleVideo(item.src, item.id)}
+              />
               <div className="aboutPageContainer__content_videoContainer_titleContainer">
-              <h4 className="aboutPageContainer__content_videoContainer_titleContainer_title">{item.text}</h4>
+                <h4 className="aboutPageContainer__content_videoContainer_titleContainer_title">{item.text}</h4>
               </div>
             </div>
           ))}

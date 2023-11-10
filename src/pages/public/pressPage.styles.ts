@@ -12,12 +12,11 @@ const PressPageStyles = styled.div`
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    &__titleContainer{
-    text-align: center;
-        &_title{
+    &__titleContainer {
+      text-align: center;
+      &_title {
         font-weight: 100;
-
-        }
+      }
     }
   }
 `;
