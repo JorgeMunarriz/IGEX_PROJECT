@@ -47,7 +47,7 @@ export const Footer = () => {
         <div className="footer__main">
           <ul className="footer__main-terms">
             <li className="footer__main-terms-list">
-            <a href="https://www.otcmarkets.com/stock/IGEX/news" className="footer__main-terms-list-link" title="Link to conditions of use"> 
+            <a href="https://www.otcmarkets.com/stock/IGEX/news"  target="_blanck" className="footer__main-terms-list-link" title="Link to conditions of use"> 
                 Conditions of use
               </a>
               </li>
@@ -57,8 +57,13 @@ export const Footer = () => {
               </p>
             </li>
             <li className="footer__main-terms-list">
-              <a href="https://www.otcmarkets.com/stock/IGEX/news" className="footer__main-terms-list-link" title="Link to Press room OTC"> 
+              <a href="https://www.otcmarkets.com/stock/IGEX/news"  target="_blanck" className="footer__main-terms-list-link" title="Link to Press room OTC"> 
                 Press Room
+              </a>
+            </li>
+            <li className="footer__main-terms-list">
+              <a href="https://www.youtube.com/@IndoGlobalExchangesPte.Ltd." target="_blank" className="footer__main-terms-list-link" title="Link to Press room OTC"> 
+                Youtube Channel
               </a>
             </li>
           </ul>
