@@ -8,4 +8,4 @@ export { default as image_5 } from "./image_5.png";
 export { default as image_6 } from "./image_6.png";
 export { default as close_image } from "./close.png";
 export { default as imageLogo } from "./igex_transparent.png";
-// export { default as otcLogo } from "./otc.png";
+export { default as otcLogo } from "./otc.png";
