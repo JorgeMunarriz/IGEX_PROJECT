@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CookiesPageStyles = styled.div`
+const TermsOfUsePageStyles = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -11,4 +11,4 @@ text-align: center;
 gap: 1rem;
 `;
 
-export default CookiesPageStyles;
+export default TermsOfUsePageStyles;

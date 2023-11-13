@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Layout, HomePage, LandingPage, ContactPage, TeamPage, AboutPage, CookiesPage, PressPage } from "../pages";
+import { Layout, HomePage, LandingPage, ContactPage, TeamPage, AboutPage, CookiesPage, PressPage, TermsOfUsePage } from "../pages";
 import { ErrorRoute, PublicRoute } from "../routes";
-import { ABOUT, CONTACT, COOKIES, HOME, LANDING, PRESS, TEAM } from "../config/paths";
+import { ABOUT, CONTACT, COOKIES, HOME, LANDING, PRESS, TEAM, TERMS } from "../config/paths";
 
 const RouterPaths = () => {
   return (
@@ -17,6 +17,7 @@ const RouterPaths = () => {
             <Route path={TEAM} element={<TeamPage />} />
             <Route path={CONTACT} element={<ContactPage />} />
             <Route path={COOKIES} element={<CookiesPage />} />
+            <Route path={TERMS} element={<TermsOfUsePage />} />
             <Route path={PRESS} element={<PressPage />} />
           </Route>
           <Route path="*" element={<ErrorRoute />} />

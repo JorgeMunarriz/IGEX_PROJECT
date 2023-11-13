@@ -8,7 +8,7 @@ const HomePage = () => {
        
         <div className="homePage__container">
           <h6 className="homePage__container_paragraph">
-            We are a holding company. Participate in businesses related with Ocean resources. Sea water, minerals, protein production, health, and beauty. Sustainable aproach to humanity's great
+            We are a holding company. We participate in businesses related with Ocean resources. Sea water, minerals, protein production, health, and beauty. Sustainable approach to humanity's great
             challenge: conquer the ocean. Join us in this exiting trip. Let's do it.
           </h6>
         </div>

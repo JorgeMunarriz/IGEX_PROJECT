@@ -77,6 +77,18 @@ const AboutPageStyles = styled.div`
       max-width: 90%;
       outline: none;
       border-radius: 5px;
+      
+      &_consentRejected {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        background: var(--background-light);
+        width: 80vw;
+        height: 200px;
+        border-radius: 5px;
+      }
     }
   }
   .close {
@@ -87,6 +99,7 @@ const AboutPageStyles = styled.div`
     filter: invert(1);
     max-width: 32px;
   }
+  
 
   @media (max-width: 991px) {
     .aboutPageContainer {

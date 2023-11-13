@@ -1,9 +1,12 @@
+import { CookiesConsentProvider } from "./context/CookiesConsentContext";
 import RouterPaths from "./router/RouterPaths.routes";
 
 function App() {
   return (
     <>
-      <RouterPaths />
+      <CookiesConsentProvider>
+        <RouterPaths />
+      </CookiesConsentProvider>
     </>
   );
 }

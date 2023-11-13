@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { AboutPageStyles } from ".";
 import * as image from "../../assets/images";
+import { useConsentContext } from "../../hooks/useContextHook";
+import { ModalCookies } from "../../components";
 
 const AboutPage = () => {
   const [selectedVideoSrc, setSelectedVideoSrc] = useState<string | undefined>(undefined);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const [currentVideoId, setCurrentVideoId] = useState<number | undefined>(undefined);
+  const  {cookiesConsent} = useConsentContext()
 
   useEffect(() => {
     const videoElement = document.getElementById(`videoPlayer-${currentVideoId}`);
@@ -91,12 +94,23 @@ const AboutPage = () => {
         </div>
       </div>
       <section className={`videoPlayer ${isVideoVisible ? "active" : ""}`} id="videoPlayerContainer">
-        {isVideoVisible && (
-          <>
-            <video className="videoPlayer__video" id={`videoPlayer-${currentVideoId}`} src={selectedVideoSrc} autoPlay={true} controls></video>
-            <img src={image.close_image} alt="Ícono de Cerrar" className="close" onClick={() => toggleVideo(undefined, currentVideoId)} />
-          </>
-        )}
+        {
+          cookiesConsent && isVideoVisible ? <>
+          <video className="videoPlayer__video" id={`videoPlayer-${currentVideoId}`} src={selectedVideoSrc} autoPlay={true} controls></video>
+          <img src={image.close_image} alt="Ícono de Cerrar" className="close" onClick={() => toggleVideo(undefined, currentVideoId)} />
+        </> : 
+        <>
+        <div className="videoPlayer__video" >
+          <div className="videoPlayer__video_consentRejected">
+          <h2 className="videoPlayer__video_consentRejected_alternativeText">Please accept our privacy and policy.</h2>
+          <ModalCookies/>
+
+          </div>
+          </div>
+        <img src={image.close_image} alt="Ícono de Cerrar" className="close" onClick={() => toggleVideo(undefined, currentVideoId)} />
+      </>
+        }
+        
       </section>
     </AboutPageStyles>
   );

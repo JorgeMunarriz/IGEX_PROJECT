@@ -1,8 +1,12 @@
 import { FooterStyles } from "./footer.styles";
-import { BsList, BsTwitter, BsX } from "react-icons/bs";
-// import { FaFish} from "react-icons/fa6"
+import { BsList, BsX } from "react-icons/bs";
+import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import { otcLogo } from "../../../assets/images";
+import { ModalCookies } from "../..";
+import { Link } from "react-router-dom";
+import { TERMS } from "../../../config/paths";
+
 
 export const Footer = () => {
   const [active, setActive] = useState(false);
@@ -28,8 +32,8 @@ export const Footer = () => {
               </a>
             </li> */}
             <li className="footer__header-socialmedia-list">
-              <a href="https://www.otcmarkets.com/stock/IGEX/overview" title="Link to Twitter" className="footer__header-socialmedia-list-link" target="_blanck">
-                <BsTwitter />
+              <a href="https://twitter.com/IGEX_Official" title="Link to IGEX's Twitter" className="footer__header-socialmedia-list-link" target="_blanck">
+                <FaXTwitter />
               </a>
             </li>
             <li className="footer__header-socialmedia-list">
@@ -47,22 +51,22 @@ export const Footer = () => {
         <div className="footer__main">
           <ul className="footer__main-terms">
             <li className="footer__main-terms-list">
-            <a href="https://www.otcmarkets.com/stock/IGEX/news"  target="_blanck" className="footer__main-terms-list-link" title="Link to conditions of use"> 
+              <Link to={TERMS}  className="footer__main-terms-list-link" title="Link to conditions of use">
                 Conditions of use
-              </a>
-              </li>
-            <li className="footer__main-terms-list">
-              <p  className="pdcc-open-modal footer__main-terms-list-link" title="Link to Privacy & Policy">
+              </Link>
+            </li>
+            {/* <li className="footer__main-terms-list">
+              <p className="pdcc-open-modal footer__main-terms-list-link" title="Link to Privacy & Policy">
                 Privacy & Policy
               </p>
-            </li>
+            </li> */}
             <li className="footer__main-terms-list">
-              <a href="https://www.otcmarkets.com/stock/IGEX/news"  target="_blanck" className="footer__main-terms-list-link" title="Link to Press room OTC"> 
+              <a href="https://www.otcmarkets.com/stock/IGEX/news" target="_blanck" className="footer__main-terms-list-link" title="Link to Press room OTC">
                 Press Room
               </a>
             </li>
             <li className="footer__main-terms-list">
-              <a href="https://www.youtube.com/@IndoGlobalExchangesPte.Ltd." target="_blank" className="footer__main-terms-list-link" title="Link to Press room OTC"> 
+              <a href="https://www.youtube.com/@IndoGlobalExchangesPte.Ltd." target="_blank" className="footer__main-terms-list-link" title="Link to Youtube IGEX's channel">
                 Youtube Channel
               </a>
             </li>
@@ -71,6 +75,7 @@ export const Footer = () => {
       </div>
       <div className="footer__footer" id="copyrightContainer">
         <p className="footer__footer-copyright">© 2023 IGEX</p>
+        <ModalCookies />
       </div>
     </FooterStyles>
   );

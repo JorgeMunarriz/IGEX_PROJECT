@@ -44,7 +44,7 @@ const HomePageStyles = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      width: 41vw;
+      width: 44vw;
       height: 100%;
       &_paragraph {
         text-align: center;
