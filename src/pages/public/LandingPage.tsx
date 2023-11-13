@@ -24,7 +24,7 @@ const LandingPage = () => {
 
   setTimeout(() => {
     navigate(HOME);
-  }, 13500000);
+  }, 13500);
 
   // const videoLanding: string | undefined = import.meta.env.VITE_VIDEO_LANDING;
 
