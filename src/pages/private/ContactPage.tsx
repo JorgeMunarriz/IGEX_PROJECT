@@ -28,7 +28,7 @@ const ContactPage = () => {
     setForm({ ...form, [name]: value });
 
     const newErrorMessage = validateForm(name, value);
-    console.log(validateForm(name, value))
+    
     if(!newErrorMessage[name]) {
       const updatedErrors = {...errorMessage};
       delete updatedErrors[name];
@@ -47,13 +47,13 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (Object.values(errorMessage).some((error) => error)) {
-      console.log("Hay errores en el formulario");
+      console.log("There are errors in the form");
       return;
     }
   
     
   
-    console.log("Formulario válido, intentando enviar el correo...");
+    
     setLoading(true);
 
     const toastLoading = toast.loading(`The email is being sent`, {
@@ -66,7 +66,7 @@ const ContactPage = () => {
       progress: undefined,
       theme: "light",
     });
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, { from_name: form.user_name, to_name: "Igex Sl", from_email: form.user_email, to_email: "igexglobal@gmail.com", message: form.message }, PUBLIC_KEY).then(
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, { from_name: form.user_name, to_name: "Igex Sl", from_email: form.user_email, message: form.message, reply_to: "munarrizjorge@gmail.com", }, PUBLIC_KEY).then(
       (result) => {
         setLoading(false);
         toast.update(toastLoading, { render: "The email is sent", type: "success", isLoading: false, autoClose: 3000 });

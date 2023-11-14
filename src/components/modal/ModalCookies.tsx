@@ -9,7 +9,6 @@ const ModalCookies = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalDescription, setModalDescription] = useState(false);
   const { cookiesConsent, acceptCookiesConsent, rejectCookiesConsent, toogleCookiesConsent } = useConsentContext();
-  console.log(cookiesConsent);
   const technicalConsent: boolean = true;
 
   const toogleModal = () => {
