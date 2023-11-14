@@ -56,7 +56,7 @@ const AboutPage = () => {
     {
       id: 5,
       src: import.meta.env.VITE_VIDEO_5,
-      text: "BUSSINESSES",
+      text: "BUSINESSES",
     },
     {
       id: 6,
