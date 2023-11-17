@@ -9,6 +9,7 @@ const ContactPageStyles = styled.div`
   height: 100%;
   padding: 2rem;
   overflow: auto;
+  overflow-x: hidden;
 
   .formContainer {
     display: flex;

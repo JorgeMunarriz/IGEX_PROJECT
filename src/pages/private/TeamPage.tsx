@@ -15,7 +15,7 @@ const TeamPage = () => {
           {cookiesConsent ? <video className="teamPageContainer__videoContainer_video" src={import.meta.env.VITE_VIDEO_TEAM} autoPlay={true} controls></video>:
           <>
             <div className="teamPageContainer__textAlternative">
-              <p className="teamPageContainer__textAlternative_paragraph">Please accept our terms to show the video player: <ModalCookies/> </p>
+              <p className="teamPageContainer__textAlternative_paragraph">Please accept our terms to show the video player:  </p> <ModalCookies/>
             </div>
             <div className="teamPageContainer__imagesAlternative">
               <img src={import.meta.env.VITE_IMAGE_TEAM_1} className="teamPageContainer__imagesAlternative_image" alt="Image team 1" />

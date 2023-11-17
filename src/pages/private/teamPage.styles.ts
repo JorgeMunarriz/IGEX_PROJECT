@@ -40,12 +40,20 @@ const TeamPageStyles = styled.div`
     }
     &__textAlternative {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 100%;
       height: 100%;
       gap: 0.5rem;
-      &_paragraph{
+      text-align: center;
+      padding: 1rem;
+      &_paragraph {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         font-size: 1rem;
       }
     }
@@ -56,13 +64,13 @@ const TeamPageStyles = styled.div`
       width: 100%;
       height: 100%;
       gap: 0.5rem;
-      &_image{
+      &_image {
         width: 14%;
       }
     }
   }
 
-  @media only screen and (max-width: 700px){
+  @media only screen and (max-width: 700px) {
     .teamPageContainer {
       display: flex;
       align-items: center;
@@ -79,31 +87,31 @@ const TeamPageStyles = styled.div`
         }
       }
       &__textAlternative {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      gap: 0.5rem;
-      &_paragraph{
-        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        gap: 0.5rem;
+        &_paragraph {
+          font-size: 1rem;
+        }
       }
-    }
-    &__imagesAlternative {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      gap: 0.5rem;
-      &_image{
-        width: 30%;
-        height: 80%;
+      &__imagesAlternative {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        gap: 0.5rem;
+        &_image {
+          width: 30%;
+          height: 80%;
+        }
       }
-    }
     }
   }
-  
+
   @media only screen and (orientation: landscape) {
     .teamPageContainer {
       display: flex;
