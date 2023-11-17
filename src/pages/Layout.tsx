@@ -5,13 +5,6 @@ import { LayoutPage } from "./layoutPage.styles";
 export const Layout = () => {
   
 
-  // PDCookieConsent.config({
-  //   defaultLang: "en",
-  //   brand: { dev: false, name: "IGEX cookies", url: "https://igexglobal.com/", websiteOwner: "https://igexglobal.com/" },
-  //   cookiePolicyLink: "https://igexglobal.com/cookies",
-  //   hideModalIn: ["https://igexglobal.com/cookies"],
-  //   styles: { primaryButton: { bgColor: "#A1FFA1", txtColor: "#036900" }, secondaryButton: { bgColor: "#EEEEEE", txtColor: "#333333" } },
-  // });
   return (
     <LayoutPage>
       <Header />

@@ -58,7 +58,6 @@ const TeamPageStyles = styled.div`
       gap: 0.5rem;
       &_image{
         width: 14%;
-        height: 80%;
       }
     }
   }
